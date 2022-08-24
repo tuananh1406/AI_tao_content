@@ -60,8 +60,9 @@ model = AutoModelForCausalLM.from_pretrained(
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 
-max_length = sys.argv[1]
-prompt = sys.argv[2]
+print(sys.argv)
+prompt = sys.argv[1]
+max_length = sys.argv[2]
 while True:
     if not str(max_length).isdigit():
         print('Số ký tự phải là số nguyên (VD: 1000)')
